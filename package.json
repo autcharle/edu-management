@@ -1,0 +1,16 @@
+{
+  "name": "student-tracker",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/autcharle/student-tracker.git",
+  "author": "group-03",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "yarn workspace frontend run start"
+  },
+  "workspaces": [
+    "frontend",
+    "server"
+  ]
+}
