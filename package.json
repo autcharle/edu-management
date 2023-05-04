@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "start": "yarn workspace frontend run start"
+    "start": "yarn workspace frontend run start",
   },
   "workspaces": [
     "frontend",
