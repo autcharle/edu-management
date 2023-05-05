@@ -1,8 +1,10 @@
 import './App.css';
 import React, {useContext, useState } from 'react';
 import {Navigate, Route, Routes} from 'react-router-dom';
+
 import {MainPage} from './pages/main/MainPage';
 import {LogInPage} from './pages/login/LogInPage';
+import {ManageUpdatePage} from './pages/manageupdate/ManageUpdatePage';
 
 export const TokenContext = React.createContext(null);
 
@@ -26,7 +28,11 @@ function App() {
             path="/"
             element={<ProtectedRoute element={MainPage} />}
           />
-          <Route path="login" element={<LogInPage />} />
+          <Route
+            path="/update"
+            element={<ProtectedRoute element={ManageUpdatePage} />}
+          />
+          <Route path="/login" element={<LogInPage />} />
         </Routes>
       </TokenContext.Provider>
     </div>
@@ -43,3 +49,5 @@ export default App
           </div>
         ))
       )}*/
+
+      
