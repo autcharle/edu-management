@@ -9,3 +9,4 @@ router.get('/gradelist', isLoggedIn, require('./routes/gradeList/gradeList'));
 router.post('/createaccount', isLoggedIn, isAdmin, require('./routes/login/createLogInRoute'));
 
 module.exports = router;
+
