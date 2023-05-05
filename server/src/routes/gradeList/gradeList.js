@@ -1,4 +1,7 @@
 module.exports = (req, res) =>{
-    res.send("Nice!");
+    const grade = [{
+        "Toan": "10"
+    }];
+    res.json(grade);
 }
 
