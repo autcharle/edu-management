@@ -1,35 +1,45 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import React, {useContext, useState } from 'react';
+import {Navigate, Route, Routes} from 'react-router-dom';
+import {MainPage} from './pages/main/MainPage';
+import {LogInPage} from './pages/login/LogInPage';
+
+export const TokenContext = React.createContext(null);
+
+const ProtectedRoute = ({ element }) => {
+  const [token] = useContext(TokenContext);
+  return token ? element() : <Navigate to="/login" />;
+};
 
 function App() {
-  const [count, setCount] = useState(0)
+  /*const { isLoading, data: todos } = useQuery(
+    'todos',
+    logInRequest
+  );*/
+  const [token, setToken] = useState(null);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App">
+      <TokenContext.Provider value={[token, setToken]}>
+        <Routes>
+          <Route
+            path="/"
+            element={<ProtectedRoute element={MainPage} />}
+          />
+          <Route path="login" element={<LogInPage />} />
+        </Routes>
+      </TokenContext.Provider>
+    </div>
   )
 }
 
 export default App
+
+/*{isLoading ? (<div>Loading...</div>):
+      (
+        todos.map((todo) => (
+          <div key='1'>
+            {todo.Toan}
+          </div>
+        ))
+      )}*/
