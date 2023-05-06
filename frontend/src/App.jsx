@@ -1,5 +1,5 @@
 import './App.css';
-import React, {useContext, useState } from 'react';
+import React, { useState } from 'react';
 import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {MainPage} from './pages/main/MainPage';
@@ -9,26 +9,42 @@ import {ManagePage} from './pages/management/ManagePage';
 export const TokenContext = React.createContext(null);
 
 const ProtectedRoute = ({ element }) => {
-  const [token] = useContext(TokenContext);
+  const token = localStorage.getItem('token');
   return token ? element() : <Navigate to="/login" />;
 };
 
+const ProtectedLoginRoute = ({ element }) => {
+  const token = localStorage.getItem('token');
+  return token ? <Navigate to="/" /> : element();
+};
+
 function App() {
-  /*const { isLoading, data: todos } = useQuery(
-    'todos',
-    logInRequest
-  );*/
   const [token, setToken] = useState(null);
 
   return (
     <div className="App">
       <TokenContext.Provider value={[token, setToken]}>
         <Routes>
-          <Route path="/" element={<ProtectedRoute element={MainPage}/>}/>
-          <Route path="/management" element={<ProtectedRoute element={ManagePage}/>}/>
-          <Route path="/login" element={<LogInPage/>}/>
-
-          <Route path="/test" element={<ManagePage/>}/>
+          <Route
+            path="/"
+            element={<ProtectedRoute element={MainPage} />}
+          />
+          <Route 
+            path="/management"
+            element={<ProtectedRoute element={ManagePage} />}
+          />
+          <Route 
+            path="/login" 
+            element={<ProtectedLoginRoute element={LogInPage} />}
+          />
+          <Route
+            path="/"
+            element={<ProtectedRoute element={MainPage} />}
+          />
+          <Route
+            path="/update"
+            element={<ProtectedRoute element={ManageUpdatePage} />}
+          />
         </Routes>
       </TokenContext.Provider>
     </div>
@@ -37,13 +53,3 @@ function App() {
 
 export default App
 
-/*{isLoading ? (<div>Loading...</div>):
-      (
-        todos.map((todo) => (
-          <div key='1'>
-            {todo.Toan}
-          </div>
-        ))
-      )}*/
-
-      

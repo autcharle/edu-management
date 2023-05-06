@@ -10,12 +10,14 @@ export const LogInPage = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
     const navigate = useNavigate();
-    const [token, setToken] = useContext(TokenContext);
+    const [,setToken] = useContext(TokenContext);
 
     const handleLogin = (e) => {
         e.preventDefault();
-        loginRequest(username,password)
+        loginRequest(username, password)
           .then(({ token }) => {
+            console.log(token);
+            localStorage.setItem('token',token);
             setToken(token);
             navigate('/');
           })
