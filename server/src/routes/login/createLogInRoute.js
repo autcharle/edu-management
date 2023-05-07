@@ -1,5 +1,3 @@
-// testing only
-
 const LogInModel = require('../../models/logInModel');
 
 module.exports = async (req, res) => {
@@ -11,7 +9,7 @@ module.exports = async (req, res) => {
     username,
     password,
   })
-  const newTodo = await login.save();
-  res.json(newTodo);
+  const newLogin = await login.save();
+  res.json(newLogin);
 };
 
