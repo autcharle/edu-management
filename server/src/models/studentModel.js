@@ -11,7 +11,7 @@ const StudentSchema = new mongoose.Schema({
     type: String,
   },
   birth: {
-    type: String,
+    type: Date,
   },
   address: {
     type: String,
