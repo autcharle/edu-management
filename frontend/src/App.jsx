@@ -27,8 +27,8 @@ function App() {
           <Route path="/" element={<ProtectedRoute element={MainPage}/>}/>
           <Route path="/management" element={<ProtectedRoute element={ManagePage}/>}/>
           <Route path="/login" element={<LogInPage/>}/>
-          
-          <Route path="/test" element={<MainPage/>}/>
+
+          <Route path="/test" element={<ManagePage/>}/>
         </Routes>
       </TokenContext.Provider>
     </div>
