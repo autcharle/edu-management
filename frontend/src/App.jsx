@@ -4,7 +4,7 @@ import {Navigate, Route, Routes} from 'react-router-dom';
 
 import {MainPage} from './pages/main/MainPage';
 import {LogInPage} from './pages/login/LogInPage';
-import {ManageUpdatePage} from './pages/manageupdate/ManageUpdatePage';
+import {ManagePage} from './pages/management/ManagePage';
 
 export const TokenContext = React.createContext(null);
 
@@ -24,15 +24,11 @@ function App() {
     <div className="App">
       <TokenContext.Provider value={[token, setToken]}>
         <Routes>
-          <Route
-            path="/"
-            element={<ProtectedRoute element={MainPage} />}
-          />
-          <Route
-            path="/update"
-            element={<ProtectedRoute element={ManageUpdatePage} />}
-          />
-          <Route path="/login" element={<LogInPage />} />
+          <Route path="/" element={<ProtectedRoute element={MainPage}/>}/>
+          <Route path="/management" element={<ProtectedRoute element={ManagePage}/>}/>
+          <Route path="/login" element={<LogInPage/>}/>
+          
+          <Route path="/test" element={<MainPage/>}/>
         </Routes>
       </TokenContext.Provider>
     </div>
