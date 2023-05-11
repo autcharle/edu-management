@@ -1,32 +1,15 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-=======
-import "./MainPage.css";
+import "../main/MainPage.css";
 
-import icon1 from '../../assets/1.png'
 import icon2 from '../../assets/2.png'
 import icon3 from '../../assets/3.png'
-import icon4 from '../../assets/4.png'
 import icon5 from '../../assets/5.png'
 import icon6 from '../../assets/6.png'
->>>>>>> develop
 
-export const MainPage = () => {
+export const ManagePage = () => {
     const navigate = useNavigate();
 
-<<<<<<< HEAD
-    const handleLogin = (e) => {
-        e.preventDefault();
-        navigate('/update');
-    };
-
-    return (
-    <div>
-      <h1>Main Page</h1>
-        <button onClick={handleLogin}>Update</button>
-    </div>
-=======
     const handleClick = (e,nav) => {
         e.preventDefault();
         navigate(nav);
@@ -34,7 +17,7 @@ export const MainPage = () => {
 
     const handleLogOut = (e) => {
         e.preventDefault();
-        navigate("/login");
+        navigate("/");
     };
 
     function MyComponent(txt, link,nav) {
@@ -50,24 +33,19 @@ export const MainPage = () => {
     return (
         <div>
             <div className="btn">
-                <button  onClick={handleLogOut} >Đăng xuất</button>
+                <button  onClick={handleLogOut} >Trang chủ</button>
             </div>
             <div className="container">
-            <h1>Xin chào</h1>
+            <h1>Quản lý cập nhật thông tin</h1>
             <div className="row">
-                {MyComponent("Cập nhật thông tin",icon1,'/management')}
-                {MyComponent("Tra cứu học sinh",icon2,'/student')}
-                {MyComponent("Tra cứu lớp",icon3,'/class')}
+                {MyComponent("Tiếp nhận học sinh",icon2,'/management')}
+                {MyComponent("Cập nhật danh sách lớp",icon3,'/student')}
             </div>
             <div className="row">
-                {MyComponent("Tra cứu thành tích",icon4,'/subject')}
-                {MyComponent("Tra cứu báo cáo",icon5,'/report')}
-                {MyComponent("Tra cứu quy định",icon6,'/rule')}
+                {MyComponent("Cập nhật điểm",icon5,'/class')}
+                {MyComponent("Cập nhật quy định",icon6,'/subject')}
             </div>
         </div>
         </div>
->>>>>>> develop
     )
 }
-
-
