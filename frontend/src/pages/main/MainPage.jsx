@@ -2,12 +2,12 @@ import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import "./MainPage.css";
 
-import icon1 from '../../assets/mainpage/1.png'
-import icon2 from '../../assets/mainpage/2.png'
-import icon3 from '../../assets/mainpage/3.png'
-import icon4 from '../../assets/mainpage/4.png'
-import icon5 from '../../assets/mainpage/5.png'
-import icon6 from '../../assets/mainpage/6.png'
+import icon1 from '../../assets/1.png'
+import icon2 from '../../assets/2.png'
+import icon3 from '../../assets/3.png'
+import icon4 from '../../assets/4.png'
+import icon5 from '../../assets/5.png'
+import icon6 from '../../assets/6.png'
 
 export const MainPage = () => {
     const navigate = useNavigate();
