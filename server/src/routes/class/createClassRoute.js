@@ -2,7 +2,8 @@ const ClassModel = require('../../models/classModel');
 
 module.exports = async (req, res) => {
     const {classID} = req.body;
-    console.log(classID);
+    if (!classID)
+        return res.status(400).send('Missing required attributes.');
     const newClass = new ClassModel({
         classID
     })

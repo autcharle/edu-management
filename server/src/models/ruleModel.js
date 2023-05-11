@@ -12,6 +12,9 @@ const RuleSchema = new mongoose.Schema({
   },
   stdScore:{
     type: Number
+  },
+  subjectCount:{
+    type: Number
   }
 });
 
