@@ -10,5 +10,3 @@ module.exports = async (req, res) => {
     const newStudent1 = await newClass.save();
     res.json(newStudent1);
 };
-/* */
-

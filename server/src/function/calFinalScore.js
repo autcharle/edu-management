@@ -1,4 +1,3 @@
-const StudentModel = require('../models/studentModel');
 const ScoreModel = require('../models/scoreModel');
 const RuleModel = require('../models/ruleModel');
 
@@ -63,9 +62,9 @@ module.exports = async () => {
             studentID,
             name,
             classID,
-            firstSemester,
-            secondSemester,
-            FinalScore: (firstSemester + secondSemester) / 2
+            firstSemester: parseFloat(firstSemester.toFixed(2)),
+            secondSemester: parseFloat(secondSemester.toFixed(2)),
+            FinalScore: parseFloat(((firstSemester + 2*secondSemester) / 3).toFixed(2))
           }));
         
         return result;

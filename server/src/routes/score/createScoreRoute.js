@@ -1,5 +1,5 @@
 const ScoreModel = require('../../models/scoreModel');
-const calSubjectScore =  require('../../function/calSubjectScore');
+const calSubjectScore =  require('../../function/calComponentScore');
 
 module.exports = async (req, res) => {
     var {studentID, Semester, subjectID, HS1,HS2,HS3} = req.body;
