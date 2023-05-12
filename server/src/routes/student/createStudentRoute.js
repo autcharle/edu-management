@@ -1,9 +1,9 @@
 const StudentModel = require('../../models/studentModel');
-const isAgeAllowed =  require('../../middleware/isAgeAllowed');
+const isAgeAllowed =  require('../../function/isAgeAllowed');
 
 module.exports = async (req, res) => {
   const {studentID, name,gender,birth,address,email,classID} = req.body;
-  if (!studentID || !name || !gender || !birth || !address || !email || !classID) {
+  if (!studentID || !name || !gender || !birth || !address || !email) {
     return res.status(400).send('Missing required attributes.');
   }
   if (! await isAgeAllowed(birth))

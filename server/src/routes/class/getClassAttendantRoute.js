@@ -1,8 +1,8 @@
-const StudentModel = require('../../models/studentModel');
+const calFinalScore =  require('../../function/calFinalScore');
 
 module.exports = async (req, res) =>{
-    const student = await StudentModel.find(req.body);
-    //const student1 = student.filter((student) => student.gender === 'Nữ');
-    res.json(student);
+    const result = await calFinalScore();
+    const result1 = result.filter((result) => result.classID === req.body.classID);
+    res.json(result1);
 
 }

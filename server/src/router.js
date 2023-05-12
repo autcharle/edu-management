@@ -10,8 +10,7 @@ router.post('/login', require('./routes/login/logInRoute'));
 // Screen 4:
 
 // Screen 5: class attendants list
-router.get('/get-class-id', isLoggedIn, require('./routes/class/getClassIDRoute'));
-router.get('/get-class-attendant', isLoggedIn, require('./routes/class/getClassAttendantRoute'));
+
 
 // Screen 6:
 
@@ -36,6 +35,9 @@ router.post('/create-subject',isAdmin, require('./routes/subject/createSubjectRo
 router.get('/get-subject', isLoggedIn, require('./routes/subject/getSubjectRoute'));
 router.post('/create-score',isTeacher, require('./routes/score/createScoreRoute'));
 router.get('/get-score',isLoggedIn, require('./routes/score/getScoreRoute'));
+
+router.get('/get-class-id', isLoggedIn, require('./routes/class/getClassIDRoute'));
+router.get('/get-class-attendant', isLoggedIn, require('./routes/class/getClassAttendantRoute'));
 
 module.exports = router;
 

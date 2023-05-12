@@ -1,4 +1,5 @@
 const ScoreModel = require('../../models/scoreModel');
+const calSubjectScore =  require('../../function/calSubjectScore');
 
 module.exports = async (req, res) => {
     var {studentID, Semester, subjectID, HS1,HS2,HS3} = req.body;
@@ -7,7 +8,7 @@ module.exports = async (req, res) => {
     HS1 = HS1 ?? 0;
     HS2 = HS2 ?? 0;
     HS3 = HS3 ?? 0;
-    const FinalScore = ((HS1 + 2*HS2 + 3*HS3) / 6).toFixed(2);;
+    const FinalScore = await calSubjectScore(HS1,HS2,HS3);
     const Score = new ScoreModel({
         studentID,
         subjectID,
