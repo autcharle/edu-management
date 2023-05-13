@@ -1,5 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
+<<<<<<< HEAD
+=======
 import "./MainPage.css";
 
 import icon1 from '../../assets/1.png'
@@ -8,10 +10,23 @@ import icon3 from '../../assets/3.png'
 import icon4 from '../../assets/4.png'
 import icon5 from '../../assets/5.png'
 import icon6 from '../../assets/6.png'
+>>>>>>> develop
 
 export const MainPage = () => {
     const navigate = useNavigate();
 
+<<<<<<< HEAD
+    const handleLogin = (e) => {
+        e.preventDefault();
+        navigate('/update');
+    };
+
+    return (
+    <div>
+      <h1>Main Page</h1>
+        <button onClick={handleLogin}>Update</button>
+    </div>
+=======
     const handleClick = (e,nav) => {
         e.preventDefault();
         navigate(nav);
@@ -51,6 +66,7 @@ export const MainPage = () => {
             </div>
         </div>
         </div>
+>>>>>>> develop
     )
 }
 
