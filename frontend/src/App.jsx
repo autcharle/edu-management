@@ -5,6 +5,7 @@ import {Navigate, Route, Routes} from 'react-router-dom';
 import {MainPage} from './pages/main/MainPage';
 import {LogInPage} from './pages/login/LogInPage';
 import {ManagePage} from './pages/management/ManagePage';
+import {ManageUpdatePage} from './pages/manageupdate/ManageUpdatePage';
 
 export const TokenContext = React.createContext(null);
 
