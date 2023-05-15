@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const SubTeacherSchema = new mongoose.Schema({
   subjectID: {
@@ -7,12 +7,11 @@ const SubTeacherSchema = new mongoose.Schema({
   teacherID: {
     type: String,
   },
-  classID:{
-    type: String
-  }
+  classID: {
+    type: String,
+  },
 });
 
-const SubTeacherModel = mongoose.model('SubjectTeacher', SubTeacherSchema);
+const SubTeacherModel = mongoose.model("SubjectTeacher", SubTeacherSchema);
 
 module.exports = SubTeacherModel;
-

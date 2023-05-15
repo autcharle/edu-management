@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const RuleSchema = new mongoose.Schema({
   maxAge: {
@@ -10,15 +10,14 @@ const RuleSchema = new mongoose.Schema({
   maxClassAttendant: {
     type: Number,
   },
-  stdScore:{
-    type: Number
+  stdScore: {
+    type: Number,
   },
-  subjectCount:{
-    type: Number
-  }
+  subjectCount: {
+    type: Number,
+  },
 });
 
-const RuleModel = mongoose.model('Rule', RuleSchema);
+const RuleModel = mongoose.model("Rule", RuleSchema);
 
 module.exports = RuleModel;
-

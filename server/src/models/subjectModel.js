@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const SubjectSchema = new mongoose.Schema({
   subjectID: {
@@ -6,10 +6,9 @@ const SubjectSchema = new mongoose.Schema({
   },
   subjectName: {
     type: String,
-  }
+  },
 });
 
-const SubjectModel = mongoose.model('Subject', SubjectSchema);
+const SubjectModel = mongoose.model("Subject", SubjectSchema);
 
 module.exports = SubjectModel;
-
