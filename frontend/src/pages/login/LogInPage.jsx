@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "./LoginPage.css";
 import loginRequest from "../../api/login/logInRequest";
 import { useNavigate } from "react-router-dom";
 import { TokenContext } from "../../App";
@@ -24,17 +25,33 @@ export const LogInPage = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <div style={{ color: "red" }}>{error}</div>
+    <div className="cover">
+      <h1>Đăng nhập để bắt đầu sử dụng</h1>
+
       <form onSubmit={handleLogin}>
-        <input value={username} onChange={(e) => setUsername(e.target.value)} />
         <input
+          placeholder="Tài khoản"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          placeholder="Mật khẩu"
           type="password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button>Login</button>
+        <div
+          style={{
+            color: "red",
+            fontSize: "1rem",
+            lineHeight: "1.5rem",
+            fontFamily: "Monsterrat-300",
+            height: "1.5rem",
+          }}
+        >
+          {error}
+        </div>
+        <button>Đăng nhập</button>
       </form>
     </div>
   );
