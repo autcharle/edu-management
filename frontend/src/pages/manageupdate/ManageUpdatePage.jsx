@@ -1,8 +1,5 @@
-import React from 'react'
+import React from "react";
 
 export const ManageUpdatePage = () => {
-    return (
-        <div>Manage Update Page</div>
-    )
-}
-
+  return <div>Manage Update Page</div>;
+};

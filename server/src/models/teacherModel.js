@@ -1,4 +1,4 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const TeacherSchema = new mongoose.Schema({
   teacherID: {
@@ -18,10 +18,9 @@ const TeacherSchema = new mongoose.Schema({
   },
   email: {
     type: String,
-  }
+  },
 });
 
-const TeacherModel = mongoose.model('Teacher', TeacherSchema);
+const TeacherModel = mongoose.model("Teacher", TeacherSchema);
 
 module.exports = TeacherModel;
-

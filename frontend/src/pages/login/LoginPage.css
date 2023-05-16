@@ -1,0 +1,81 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  font-family: "Monsterrat-700";
+  font-size: 1.5rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+button {
+  font-family: "Monsterrat-500";
+  background-color: #18a0fb;
+  color: white;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+@font-face {
+  font-family: "Monsterrat-700";
+  src: url("../../assets/fonts/Montserrat/Montserrat-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Monsterrat-500";
+  src: url("../../assets/fonts/Montserrat/Montserrat-Medium.ttf");
+}
+
+@font-face {
+  font-family: "Monsterrat-400";
+  src: url("../../assets/fonts/Montserrat/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Monsterrat-300";
+  src: url("../../assets/fonts/Montserrat/Montserrat-Light.ttf");
+}
+
+.cover {
+  background-color: white;
+  border-color: black;
+  width: 46.25em;
+  height: 31.25em;
+  position: relative;
+  box-shadow: 0 0 0.2em rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 6rem;
+  justify-content: center;
+}
+
+form {
+  width: 22em;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+input {
+  height: 3.25rem;
+  width: 100%;
+  padding: 1.5em;
+  font-family: "Monsterrat-400";
+}
+
+input:first-child {
+  margin-bottom: 2rem;
+}
