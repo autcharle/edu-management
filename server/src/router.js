@@ -8,33 +8,29 @@ const router = express.Router();
 router.post("/login", require("./routes/login/loginRoute"));
 // Screen 2,3: navigate page
 // Screen 4: score list
-router.get("/get-score", isLoggedIn, require("./routes/score/getScoreRoute"));
-
+router.get("/get-score",
+  isLoggedIn,
+  require("./routes/score/getScoreRoute"));
 // Screen 5: class attendants list
 router.get(
   "/get-class-attendant",
   isLoggedIn,
   require("./routes/class/getClassAttendantRoute")
 );
-
 // Screen 6: subject report
 router.get(
   "/get-report",
   isLoggedIn,
   require("./routes/report/getReportRoute")
 );
-
 // Screen 7: student list
-router.get(
+router.post(
   "/get-student",
   isLoggedIn,
   require("./routes/student/getStudentRoute")
 );
-
 //screen 8: get rules
 router.get("/get-rule", isLoggedIn, require("./routes/rule/getRuleRoute"));
-
-// developing
 // Screen 9: add student
 router.post(
   "/create-student",
@@ -43,6 +39,8 @@ router.post(
 );
 // Screen 10: update rule
 router.put("/update-rule", isAdmin, require("./routes/rule/updateRuleRoute"));
+
+// developing
 
 //other/ not specify/in develop
 router.post(
