@@ -4,8 +4,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 
 import { MainPage } from "./pages/main/MainPage";
 import { LogInPage } from "./pages/login/LogInPage";
-import { ManagePage } from "./pages/management/ManagePage";
-import { ManageUpdatePage } from "./pages/manageupdate/ManageUpdatePage";
+import { ManagePage } from "./pages/main/ManagePage";
+import { GetStudent } from "./pages/query/GetStudent";
+import { GetRule } from "./pages/query/GetRule";
 
 export const TokenContext = React.createContext(null);
 
@@ -26,19 +27,22 @@ function App() {
     <div className="App">
       <TokenContext.Provider value={[token, setToken]}>
         <Routes>
-          <Route path="/" element={<ProtectedRoute element={MainPage} />} />
-          <Route
-            path="/management"
-            element={<ProtectedRoute element={ManagePage} />}
-          />
           <Route
             path="/login"
             element={<ProtectedLoginRoute element={LogInPage} />}
           />
           <Route path="/" element={<ProtectedRoute element={MainPage} />} />
           <Route
-            path="/update"
-            element={<ProtectedRoute element={ManageUpdatePage} />}
+            path="/management"
+            element={<ProtectedRoute element={ManagePage} />}
+          />
+          <Route
+            path="/student"
+            element={<GetStudent />}
+          />
+          <Route
+            path="/rule"
+            element={<GetRule />}
           />
         </Routes>
       </TokenContext.Provider>
