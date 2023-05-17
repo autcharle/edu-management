@@ -5,8 +5,9 @@ import { Navigate, Route, Routes } from "react-router-dom";
 import { MainPage } from "./pages/main/MainPage";
 import { LogInPage } from "./pages/login/LogInPage";
 import { ManagePage } from "./pages/main/ManagePage";
-import { GetStudent } from "./pages/query/GetStudent";
-import { GetRule } from "./pages/query/GetRule";
+import { StudentPage } from "./pages/query/StudentPage";
+import { RulePage } from "./pages/query/RulePage";
+import { ClassPage } from "./pages/query/ClassPage";
 
 export const TokenContext = React.createContext(null);
 
@@ -38,11 +39,15 @@ function App() {
           />
           <Route
             path="/student"
-            element={<GetStudent />}
+            element={<StudentPage />}
           />
           <Route
             path="/rule"
-            element={<GetRule />}
+            element={<RulePage />}
+          />
+          <Route
+            path="/class"
+            element={<ClassPage />}
           />
         </Routes>
       </TokenContext.Provider>

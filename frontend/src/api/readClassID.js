@@ -1,9 +1,8 @@
 import { API_URL } from "./config"
 
-
 export default () => {
   const token = localStorage.getItem("token");
-  return fetch(`${API_URL}/get-rule`, {
+  return fetch(`${API_URL}/get-class-id`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,

@@ -4,7 +4,9 @@ module.exports = async (req, res) => {
   const { name } = req.body;
   var student = {};
   if (name)
-    {student = await StudentModel.find({name: {"$regex": `${name}`}});}
+  {
+    student = await StudentModel.find({name: {"$regex": `${name}`}});
+  }
   else{
     student = await StudentModel.find().limit(100);
   }

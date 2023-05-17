@@ -12,7 +12,7 @@ router.get("/get-score",
   isLoggedIn,
   require("./routes/score/getScoreRoute"));
 // Screen 5: class attendants list
-router.get(
+router.post(
   "/get-class-attendant",
   isLoggedIn,
   require("./routes/class/getClassAttendantRoute")
