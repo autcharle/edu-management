@@ -6,17 +6,14 @@ import { useNavigate } from 'react-router-dom';
 import "./query.css";
 import readStudentRequest from '../../api/readRule';
 
-import { TokenContext } from '../../App';
-
 export const GetRule = () => {
-    const [token] = useContext(TokenContext);
     const navigate = useNavigate();
 
     const handleLogOut = (e) => {
         e.preventDefault();
         navigate("/");
     };
-    const {isLoading, data:rules} = useQuery('rules', () => readStudentRequest(token), {
+    const {isLoading, data:rules} = useQuery('rules', () => readStudentRequest(), {
         manual: true,
     });
 

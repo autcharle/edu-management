@@ -1,8 +1,8 @@
 import { API_URL } from "./config"
 
 
-export default (token) => {
-  token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1biI6ImFkbWluIiwicHciOiJhYmMiLCJpYXQiOjE2ODM0NzM0MDl9.LQBrcED0NwuAPQs1ly--djD60K4ecHkC0muO9tqaKss";
+export default () => {
+  const token = localStorage.getItem("token");
   return fetch(`${API_URL}/get-rule`, {
       method: 'GET',
       headers: {

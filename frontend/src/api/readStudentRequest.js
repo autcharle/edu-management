@@ -1,8 +1,8 @@
 import { API_URL } from "./config"
 
 
-export default (id,token1) => {
-  var token = localStorage.getItem("token");
+export default (id) => {
+  const token = localStorage.getItem("token");
     if(id != "")
     {return fetch(`${API_URL}/get-student`, {
       method: 'POST',

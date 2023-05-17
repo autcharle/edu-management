@@ -6,10 +6,8 @@ import { useNavigate } from 'react-router-dom';
 import "./query.css";
 import readStudentRequest from '../../api/readStudentRequest';
 
-import { TokenContext } from '../../App';
 
 export const GetStudent = () => {
-  const [token] = useContext(TokenContext);
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
 
@@ -18,7 +16,7 @@ export const GetStudent = () => {
     navigate("/");
   };
 
-  const {isLoading, data:students} = useQuery(['students',searchTerm], () => readStudentRequest(searchTerm,token), {
+  const {isLoading, data:students} = useQuery(['students',searchTerm], () => readStudentRequest(searchTerm), {
     manual: true,
   });
 
