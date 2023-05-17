@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.App {
+.app {
   height: 100vh;
   width: 100%;
   display: flex;
@@ -60,7 +60,7 @@ button {
   justify-content: center;
 }
 
-form {
+.Loginform {
   width: 22em;
   height: 50%;
   display: flex;
@@ -69,13 +69,13 @@ form {
   justify-content: space-between;
 }
 
-input {
+.LoginInput {
   height: 3.25rem;
   width: 100%;
   padding: 1.5em;
   font-family: "Monsterrat-400";
 }
 
-input:first-child {
+.LoginInput:first-child {
   margin-bottom: 2rem;
 }

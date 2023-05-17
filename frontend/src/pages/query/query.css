@@ -1,0 +1,51 @@
+.searchform{
+  display: flex;
+  text-align: center;
+  align-items: center;
+  margin: 3rem auto;
+}
+
+.searchform form{
+  margin: 0 auto;
+}
+
+
+.container {
+  margin: 1rem auto;
+  text-align: center;
+}
+
+.btn{
+  text-align: right;
+}
+
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin: 0 auto;
+  background-color: #ddd ;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+  background-color: #808080;
+  font-weight: bold;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #000;
+}
+
+tr:hover {
+  background-color: #0A0A0A;
+  color: white;
+}
+
+label{
+  font-size:large;
+  font-weight: bold;
+  padding: 10px;
+}

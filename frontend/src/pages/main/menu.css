@@ -1,18 +1,23 @@
 .container {
-  margin: 5rem auto;
+  margin: 1rem auto;
   text-align: center;
 }
 
 .box {
   border: 1px solid white;
   border-radius: 1rem;
-  width: 25rem;
-  height: 200px;
+  width: 22rem;
   display: flex;
   justify-content: center;
   align-items: center;
   transition: all 0.3s ease-in-out;
+  margin: 0 0 1rem 0;
+
 }
+.container h3{
+  margin: 1rem auto;
+}
+
 
 .box:hover {
   transform: scale(1.1);
@@ -23,7 +28,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 3.5rem 5rem;
+  margin: 3rem 5rem;
 }
 
 .col {
@@ -32,12 +37,14 @@
 }
 
 .btn {
+  margin: 1rem 5rem 0 0;
   text-align: right;
 }
 
 .logo {
   will-change: filter;
   transition: filter 300ms;
+  height: 11rem;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);

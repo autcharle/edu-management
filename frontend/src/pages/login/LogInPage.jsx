@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import "./LoginPage.css";
-import loginRequest from "../../api/login/logInRequest";
+import loginRequest from "../../api/logInRequest";
 import { useNavigate } from "react-router-dom";
 import { TokenContext } from "../../App";
 
@@ -25,16 +25,19 @@ export const LogInPage = () => {
   };
 
   return (
-    <div className="cover">
+    <div className="app">
+      <div className="cover">
       <h1>Đăng nhập để bắt đầu sử dụng</h1>
 
-      <form onSubmit={handleLogin}>
+      <form className="LoginForm" onSubmit={handleLogin}>
         <input
+          className="LoginInput"
           placeholder="Tài khoản"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
         />
-        <input
+        <input 
+          className="LoginInput"
           placeholder="Mật khẩu"
           type="password"
           value={password}
@@ -53,6 +56,7 @@ export const LogInPage = () => {
         </div>
         <button>Đăng nhập</button>
       </form>
+    </div>
     </div>
   );
 };
