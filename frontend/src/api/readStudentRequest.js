@@ -27,7 +27,7 @@ export default (id) => {
           if (response.ok) {
             return response.json()
           } else {
-            throw new Error('Login failed')
+            throw new Error('Failed')
           }
         })
     }

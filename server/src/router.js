@@ -6,9 +6,9 @@ const router = express.Router();
 
 // Screen 1: log in
 router.post("/login", require("./routes/login/loginRoute"));
-// Screen 2,3: navigate page
+// Screen 2,3: menu page
 // Screen 4: score list
-router.get("/get-score",
+router.post("/get-score",
   isLoggedIn,
   require("./routes/score/getScoreRoute"));
 // Screen 5: class attendants list
@@ -18,7 +18,7 @@ router.post(
   require("./routes/class/getClassAttendantRoute")
 );
 // Screen 6: subject report
-router.get(
+router.post(
   "/get-report",
   isLoggedIn,
   require("./routes/report/getReportRoute")
@@ -41,7 +41,16 @@ router.post(
 router.put("/update-rule", isAdmin, require("./routes/rule/updateRuleRoute"));
 
 // developing
-
+router.get(
+  "/get-class-id",
+  isLoggedIn,
+  require("./routes/class/getClassIDRoute")
+);
+router.get(
+  "/get-subject",
+  isLoggedIn,
+  require("./routes/subject/getSubjectRoute")
+);
 //other/ not specify/in develop
 router.post(
   "/create-account",
@@ -58,20 +67,12 @@ router.post(
   isAdmin,
   require("./routes/subject/createSubjectRoute")
 );
-router.get(
-  "/get-subject",
-  isLoggedIn,
-  require("./routes/subject/getSubjectRoute")
-);
+
 router.post(
   "/create-score",
   isTeacher,
   require("./routes/score/createScoreRoute")
 );
-router.get(
-  "/get-class-id",
-  isLoggedIn,
-  require("./routes/class/getClassIDRoute")
-);
+
 
 module.exports = router;

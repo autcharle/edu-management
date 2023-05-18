@@ -47,7 +47,7 @@ export const MainPage = () => {
           {MyComponent("Tra cứu lớp", icon3, "/class")}
         </div>
         <div className="row">
-          {MyComponent("Tra cứu thành tích", icon4, "/subject")}
+          {MyComponent("Tra cứu thành tích", icon4, "/score")}
           {MyComponent("Tra cứu báo cáo", icon5, "/report")}
           {MyComponent("Tra cứu quy định", icon6, "/rule")}
         </div>

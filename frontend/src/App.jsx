@@ -8,6 +8,8 @@ import { ManagePage } from "./pages/main/ManagePage";
 import { StudentPage } from "./pages/query/StudentPage";
 import { RulePage } from "./pages/query/RulePage";
 import { ClassPage } from "./pages/query/ClassPage";
+import { ScorePage } from "./pages/query/ScorePage";
+import { ReportPage } from "./pages/query/ReportPage";
 
 export const TokenContext = React.createContext(null);
 
@@ -48,6 +50,14 @@ function App() {
           <Route
             path="/class"
             element={<ClassPage />}
+          />
+          <Route
+            path="/score"
+            element={<ScorePage />}
+          />
+          <Route
+            path="/report"
+            element={<ReportPage />}
           />
         </Routes>
       </TokenContext.Provider>

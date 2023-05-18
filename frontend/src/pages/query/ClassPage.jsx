@@ -1,12 +1,9 @@
 import {React,useState,useContext,useEffect} from 'react'
-import {useQuery} from 'react-query'
-import ClipLoader from 'react-spinners/ClipLoader'
-
 import { useNavigate } from 'react-router-dom';
 import "./query.css";
 import readClassID from '../../api/readClassID';
 import readClassAttendant from '../../api/readClassAttendant';
-import Dropdown from '../../components/dropDown';
+import ClassDropDown from '../../components/classDropDown';
 
 export const ClassPage = () => {
     const navigate = useNavigate();
@@ -55,9 +52,12 @@ export const ClassPage = () => {
             <div className="searchform">
                 <form onSubmit={handleSubmit}>
                     <label>Lớp học:</label>
-                    <Dropdown options={options} handleChange={handleChange} />
+                    <ClassDropDown options={options} handleChange={handleChange} />
                     <button>Tìm kiếm</button>
                 </form>
+            </div>
+            <div className="container">
+                <h3>Sĩ số: {classAttendants.length}</h3>
             </div>
             <div className="container">
                 <table>

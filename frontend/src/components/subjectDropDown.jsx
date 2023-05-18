@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Dropdown = ({ options, handleChange }) => {
+const SubjectDropDown = ({ options, handleChange }) => {
   return (
     <select onChange={handleChange}>
       {options.map(option => (
-        <option key={option.classID} value={option.classID}>
-          {option.classID}
+        <option key={option.subjectID} value={option.subjectID}>
+          {option.subjectName}
         </option>
       ))}
       <option key={"0"} value={""}>
@@ -15,5 +15,4 @@ const Dropdown = ({ options, handleChange }) => {
   );
 };
 
-export default Dropdown;
-
+export default SubjectDropDown;
