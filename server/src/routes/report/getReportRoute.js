@@ -28,14 +28,14 @@ module.exports = async (req, res) => {
     for (const student of students) {
       // get the score based on the semester
       let score = 0;
-      if (semester === 1) {
+      if (semester === "1") {
         score = student.firstSemester;
-      } else if (semester === 2) {
+      } else if (semester === "2") {
         score = student.secondSemester;
       } else {
         score = student.FinalScore;
       }
-
+      console.log(score);
       // check if the student has passed
       if (score >= 5) {
         studentPass++;

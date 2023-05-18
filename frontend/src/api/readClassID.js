@@ -11,7 +11,11 @@ export default () => {
         if (response.ok) {
           return response.json()
         } else {
+<<<<<<< HEAD
           throw new Error('Login failed')
+=======
+          throw new Error('Failed')
+>>>>>>> develop
         }
       })
 }

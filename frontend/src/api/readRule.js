@@ -1,6 +1,5 @@
 import { API_URL } from "./config"
 
-
 export default () => {
   const token = localStorage.getItem("token");
   return fetch(`${API_URL}/get-rule`, {
@@ -12,7 +11,11 @@ export default () => {
         if (response.ok) {
           return response.json()
         } else {
+<<<<<<< HEAD
           throw new Error('Login failed')
+=======
+          throw new Error('Failed')
+>>>>>>> develop
         }
       })
 }
