@@ -1,10 +1,4 @@
 import {React,useState,useEffect} from 'react'
-<<<<<<< HEAD
-import {useQuery} from 'react-query'
-import ClipLoader from 'react-spinners/ClipLoader'
-
-=======
->>>>>>> develop
 import { useNavigate } from 'react-router-dom';
 import "./query.css";
 import readStudentRequest from '../../api/readStudentRequest';
