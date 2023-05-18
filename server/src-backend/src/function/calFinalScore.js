@@ -65,6 +65,7 @@ module.exports = async () => {
       studentID,
       name,
       classID,
+      classID,
       firstSemester: parseFloat(firstSemester.toFixed(2)),
       secondSemester: parseFloat(secondSemester.toFixed(2)),
       FinalScore: parseFloat(

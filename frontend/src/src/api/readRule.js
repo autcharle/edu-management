@@ -2,7 +2,7 @@ import { API_URL } from "./config"
 
 export default () => {
   const token = localStorage.getItem("token");
-  return fetch(`${API_URL}/get-class-id`, {
+  return fetch(`${API_URL}/get-rule`, {
       method: 'GET',
       headers: {
         Authorization: `Bearer ${token}`,
@@ -11,7 +11,7 @@ export default () => {
         if (response.ok) {
           return response.json()
         } else {
-          throw new Error('Login failed')
+          throw new Error('Failed')
         }
       })
 }
