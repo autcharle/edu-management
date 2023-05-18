@@ -10,6 +10,10 @@ import { RulePage } from "./pages/query/RulePage";
 import { ClassPage } from "./pages/query/ClassPage";
 import { ScorePage } from "./pages/query/ScorePage";
 import { ReportPage } from "./pages/query/ReportPage";
+import { UpdateClassPage } from "./pages/update/UpdateClassPage";
+import { UpdateRulePage } from "./pages/update/UpdateRulePage";
+import { UpdateScorePage } from "./pages/update/UpdateScorePage";
+import { UpdateStudentPage } from "./pages/update/UpdateStudentPage";
 
 export const TokenContext = React.createContext(null);
 
@@ -58,6 +62,22 @@ function App() {
           <Route
             path="/report"
             element={<ReportPage />}
+          />
+          <Route
+            path="/management/class"
+            element={<UpdateClassPage />}
+          />
+          <Route
+            path="/management/rule"
+            element={<UpdateRulePage />}
+          />
+          <Route
+            path="/management/score"
+            element={<UpdateScorePage />}
+          />
+          <Route
+            path="/management/student"
+            element={<UpdateStudentPage />}
           />
         </Routes>
       </TokenContext.Provider>

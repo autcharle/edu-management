@@ -30,7 +30,10 @@ router.post(
   require("./routes/student/getStudentRoute")
 );
 //screen 8: get rules
-router.get("/get-rule", isLoggedIn, require("./routes/rule/getRuleRoute"));
+router.get("/get-rule", 
+  isLoggedIn, 
+  require("./routes/rule/getRuleRoute")
+);
 // Screen 9: add student
 router.post(
   "/create-student",
@@ -38,9 +41,18 @@ router.post(
   require("./routes/student/createStudentRoute")
 );
 // Screen 10: update rule
-router.put("/update-rule", isAdmin, require("./routes/rule/updateRuleRoute"));
+router.put(
+  "/update-rule", 
+  isAdmin, 
+  require("./routes/rule/updateRuleRoute")
+);
+// Screen 11: update class
 
-// developing
+// Screen 12: update score
+
+
+
+// other
 router.get(
   "/get-class-id",
   isLoggedIn,

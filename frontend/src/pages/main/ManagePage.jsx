@@ -38,12 +38,12 @@ export const ManagePage = () => {
       <div className="container">
         <h1>Quản lý cập nhật thông tin</h1>
         <div className="row">
-          {MyComponent("Tiếp nhận học sinh", icon2, "/management")}
-          {MyComponent("Cập nhật danh sách lớp", icon3, "/student")}
+          {MyComponent("Tiếp nhận học sinh", icon2, "/management/student")}
+          {MyComponent("Cập nhật danh sách lớp", icon3, "/management/class")}
         </div>
         <div className="row">
-          {MyComponent("Cập nhật điểm", icon5, "/class")}
-          {MyComponent("Cập nhật quy định", icon6, "/subject")}
+          {MyComponent("Cập nhật điểm", icon5, "/management/score")}
+          {MyComponent("Cập nhật quy định", icon6, "/management/rule")}
         </div>
       </div>
     </div>
