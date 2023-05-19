@@ -1,4 +1,4 @@
-import { API_URL } from "./config"
+import {API_URL} from './config.js'
 
 export default (classID,subjectID,semester) => {
   const token = localStorage.getItem("token");
