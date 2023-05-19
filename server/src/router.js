@@ -47,9 +47,17 @@ router.put(
   require("./routes/rule/updateRuleRoute")
 );
 // Screen 11: update class
-
+router.put(
+  "/update-student-class", 
+  isAdmin, 
+  require("./routes/student/updateStudentClassRoute")
+);
 // Screen 12: update score
-
+router.post(
+  "/create-score",
+  isTeacher,
+  require("./routes/score/createScoreRoute")
+);
 
 
 // other
@@ -80,11 +88,6 @@ router.post(
   require("./routes/subject/createSubjectRoute")
 );
 
-router.post(
-  "/create-score",
-  isTeacher,
-  require("./routes/score/createScoreRoute")
-);
 
 
 module.exports = router;

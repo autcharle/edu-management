@@ -1,0 +1,32 @@
+.list {
+max-height: var(--container-height);
+border: 2px solid #37392e;
+border-radius: 5px;
+scroll-snap-type: y mandatory;
+overscroll-behavior-y: contain;
+overflow-x: hidden;
+overflow-y: auto;
+scroll-timeline: listTimeline vertical;
+
+margin: auto 20rem;
+}
+
+ul {
+margin: 0;
+padding: 0;
+list-style: none;
+background: #fff;
+}
+
+li {
+padding: 0.5rem;
+border-top: 1px solid #ccc;
+scroll-snap-align: start;
+}
+
+li:first-child {
+border: 0;
+}
+li:hover{
+    background: grey;
+}

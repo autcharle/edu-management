@@ -1,6 +1,15 @@
 import React from 'react';
 
-const ClassDropDown = ({ options, handleChange }) => {
+const ClassDropDown = ({ options, handleChange ,check}) => {
+  function AllSelect(){
+    if(check)
+      return(
+        <option key={"0"} value={""}>
+            Tất cả
+        </option>
+      )
+    return
+  }
   return (
     <select onChange={handleChange}>
       {options.map(option => (
@@ -8,9 +17,7 @@ const ClassDropDown = ({ options, handleChange }) => {
           {option.classID}
         </option>
       ))}
-      <option key={"0"} value={""}>
-          Tất cả
-        </option>
+      <AllSelect></AllSelect>
     </select>
   );
 };
