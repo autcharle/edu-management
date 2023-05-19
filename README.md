@@ -100,7 +100,7 @@ git commit -m "Initial commit"`
 
 ## Deploy server
 1. Chuyển đến thư mục server.
-`cd server/.
+`cd server/.`
 
 2. Thay scripts trong package.json bằng đoạn code sau:
 ```
