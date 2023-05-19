@@ -57,7 +57,7 @@ export const ReportPage = () => {
             <div className="searchform">
                 <form onSubmit={handleSubmit}>
                     <label>Môn học:</label>
-                    <SubjectDropDown options={options} handleChange={handleSubject} />
+                    <SubjectDropDown options={options} handleChange={handleSubject} check={true} />
                     <label>Kì học:</label>
                     <select onChange={(e) => setSelectedOption2(e.target.value)}>
                         <option key={"1"} value={"1"}>

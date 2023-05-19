@@ -23,12 +23,14 @@ export default (id) => {
           "Content-Type": 'application/json'
         }
       })
-        .then(response => {
-          if (response.ok) {
-            return response.json()
+      .then(response => {
+        if (response.ok) {
+          return response.json();
           } else {
-            throw new Error('Failed')
+          return response.text().then((error) => {
+              throw new Error(error);
+          });
           }
-        })
+      })
     }
 }

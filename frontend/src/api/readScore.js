@@ -14,5 +14,13 @@ export default (classID,subjectID,semester) => {
         "Semester":`${semester}`
       })
     })
-      .then(response => response.json())
+    .then(response => {
+      if (response.ok) {
+        return response.json();
+        } else {
+        return response.text().then((error) => {
+            throw new Error(error);
+        });
+        }
+    })
 }

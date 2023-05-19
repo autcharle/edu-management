@@ -1,6 +1,16 @@
 import React from 'react';
 
-const SubjectDropDown = ({ options, handleChange }) => {
+const SubjectDropDown = ({ options, handleChange,check }) => {
+  function AllSelect(){
+    if(check)
+      return(
+        <option key={"0"} value={""}>
+            Tất cả
+        </option>
+      )
+    return
+  }
+
   return (
     <select onChange={handleChange}>
       {options.map(option => (
@@ -8,9 +18,7 @@ const SubjectDropDown = ({ options, handleChange }) => {
           {option.subjectName}
         </option>
       ))}
-      <option key={"0"} value={""}>
-          Tất cả
-        </option>
+      <AllSelect></AllSelect>
     </select>
   );
 };

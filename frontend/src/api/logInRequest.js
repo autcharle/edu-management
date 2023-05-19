@@ -13,11 +13,13 @@ export default (username, password) => {
         })
     })
     .then(response => {
-        if (response.ok) {
-          return response.json()
+      if (response.ok) {
+        return response.json();
         } else {
-          throw new Error('Login failed')
+        return response.text().then((error) => {
+            throw new Error(error);
+        });
         }
-      })
+    })
 }
 

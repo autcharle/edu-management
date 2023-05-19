@@ -3,6 +3,14 @@
   text-align: center;
 }
 
+.container button{
+  margin: 0.5rem;
+
+}
+.container h1{
+  margin: 1rem;
+
+}
 .box {
   border: 1px solid white;
   border-radius: 1rem;
