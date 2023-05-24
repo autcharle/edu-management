@@ -13,12 +13,13 @@ const SubjectDropDown = ({ options, handleChange,check }) => {
 
   return (
     <select onChange={handleChange}>
+      <AllSelect></AllSelect>
       {options.map(option => (
         <option key={option.subjectID} value={option.subjectID}>
           {option.subjectName}
         </option>
       ))}
-      <AllSelect></AllSelect>
+
     </select>
   );
 };

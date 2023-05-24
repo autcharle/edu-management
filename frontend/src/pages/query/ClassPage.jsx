@@ -52,7 +52,7 @@ export const ClassPage = () => {
             <div className="searchform">
                 <form onSubmit={handleSubmit}>
                     <label>Lớp học:</label>
-                    <ClassDropDown options={options} handleChange={handleChange} />
+                    <ClassDropDown options={options} handleChange={handleChange} check={true}/>
                     <button>Tìm kiếm</button>
                 </form>
             </div>

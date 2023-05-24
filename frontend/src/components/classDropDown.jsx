@@ -11,13 +11,14 @@ const ClassDropDown = ({ options, handleChange ,check}) => {
     return
   }
   return (
+    
     <select onChange={handleChange}>
+      <AllSelect></AllSelect>
       {options.map(option => (
         <option key={option.classID} value={option.classID}>
           {option.classID}
         </option>
       ))}
-      <AllSelect></AllSelect>
     </select>
   );
 };

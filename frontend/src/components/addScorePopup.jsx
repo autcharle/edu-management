@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import updateScore from '../api/updateScore';
+import React, { useState } from "react";
+import updateScore from "../api/updateScore";
 
-const AddScorePopup =  ({ v1, v2, v3, onClose }) => {
-  const [t1, setT1] = useState('');
-  const [t2, setT2] = useState('');
-  const [t3, setT3] = useState('');
+const AddScorePopup = ({ v1, v2, v3, onClose }) => {
+  const [t1, setT1] = useState("");
+  const [t2, setT2] = useState("");
+  const [t3, setT3] = useState("");
   const [error, setError] = useState("");
 
   const handleSendScore = async () => {
@@ -16,23 +16,39 @@ const AddScorePopup =  ({ v1, v2, v3, onClose }) => {
     }
   };
 
-
   return (
     <div>
-    <div className='container'>
-      <h1>Nhập điểm cho học sinh: {v1}, môn: {v2}, kì:{v3}</h1>
-      <label>Điểm 15 phút</label>
-      <input type="text" placeholder="10" value={t1} onChange={(e) => setT1(e.target.value)} />
-      <label>Điểm 15 phút</label>
-      <input type="text" placeholder="10" value={t2} onChange={(e) => setT2(e.target.value)} />
-      <label>Điểm 15 phút</label>
-      <input type="text" placeholder="10" value={t3} onChange={(e) => setT3(e.target.value)} />
-    </div>
-    <div>
-      <button onClick={handleSendScore}>Nhập</button>
-      <button onClick={onClose}>Đóng</button>
-      {error}
-    </div>
+      <div className="container">
+        <p>
+          Nhập điểm cho học sinh: {v1}, môn: {v2}, kì:{v3}
+        </p>
+        <p>Điểm 15 phút</p>
+        <input
+          type="text"
+          placeholder="10"
+          value={t1}
+          onChange={(e) => setT1(e.target.value)}
+        />
+        <p>Điểm 1 tiết</p>
+        <input
+          type="text"
+          placeholder="10"
+          value={t2}
+          onChange={(e) => setT2(e.target.value)}
+        />
+        <p>Điểm 1 cuối kì</p>
+        <input
+          type="text"
+          placeholder="10"
+          value={t3}
+          onChange={(e) => setT3(e.target.value)}
+        />
+        <p style={{ color: "red" }}>{error}</p>
+      </div>
+      <div>
+        <button onClick={handleSendScore}>Nhập</button>
+        <button onClick={onClose}>Đóng</button>
+      </div>
     </div>
   );
 };
