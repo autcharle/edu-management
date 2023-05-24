@@ -89,8 +89,8 @@ cd frontend/`
 `heroku buildpacks:add https://github.com/mars/create-react-app-buildpack <your-heroku-app-name>`
 
 12. Commit thay đổi:
-`git add .
-git commit -m "Initial commit"`
+`git add .`
+`git commit -m "Initial commit"`
 
 13. Deploy lên Heroku:
 `git push heroku master`
@@ -116,8 +116,8 @@ git commit -m "Initial commit"`
 `heroku create`
 
 5. Commit thay đổi:
-`git add .
-git commit -m "Initial commit"`
+`git add .`
+`git commit -m "Initial commit"`
 
 6. Deploy lên Heroku:
 `git push heroku master`
