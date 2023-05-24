@@ -39,6 +39,7 @@ module.exports = async (req, res) => {
       if (score >= 5) {
         studentPass++;
       }
+      console.log(score);
     }
 
     // calculate the percentage of students who have passed

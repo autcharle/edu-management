@@ -75,6 +75,7 @@ export const ReportPage = () => {
         </form>
       </div>
       <div className="container">
+        <h1>Mã môn: {selectedOption1}. Học kì:{selectedOption2}</h1>
         <table>
           <thead>
             <tr>
