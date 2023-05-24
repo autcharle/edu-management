@@ -70,7 +70,7 @@ export const UpdateScorePage = () => {
         <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">
-        <h1>Bảng điểm</h1>
+        <h1>Cập nhật điểm</h1>
       </div>
       <div className="searchform">
         <form>
