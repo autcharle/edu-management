@@ -1,56 +1,61 @@
-import {React,useState,useEffect} from 'react'
+import { React, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import "./update.css";
-import readStudentRequest from '../../api/readStudentRequest';
-import ClassDropDown from '../../components/classDropDown';
-import readClassID from '../../api/readClassID';
-import updateStudentClass from '../../api/updateStudentClass';
+import readStudentRequest from "../../api/readStudentRequest";
+import ClassDropDown from "../../components/classDropDown";
+import readClassID from "../../api/readClassID";
+import updateStudentClass from "../../api/updateStudentClass";
 
 export const UpdateClassPage = () => {
   const navigate = useNavigate();
+  const [classOption, setClassOption] = useState([]);
+  const [selectedClass, setSelectedClass] = useState("");
+  const [classList, setclassList] = useState([]);
+  const [error, setError] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+  const [students, setstudents] = useState([]);
+
   const handleBack = (e) => {
     e.preventDefault();
     navigate("/management");
   };
-  const [classOption, setClassOption] = useState([]);
-  const [selectedClass, setSelectedClass] = useState('');
-  const [classList, setclassList] = useState([]);
-  const [error, setError] = useState("");
 
-  const handleClassID = event => {
+  const handleClassID = (event) => {
     const selectedValue1 = event.target.value;
     setSelectedClass(selectedValue1);
-    const classlist = students.filter((item) => item.classID === selectedValue1);
+    const classlist = students.filter(
+      (item) => item.classID === selectedValue1
+    );
     setclassList(classlist);
-};
+  };
 
-  const [searchTerm, setSearchTerm] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-
-  const [students, setstudents] = useState([]);
   useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const data = await readStudentRequest("");
-          setstudents(data);
-          const data1 = await readClassID();
-          setClassOption(data1);
-        } catch (error) {
-          console.error('Lỗi khi lấy dữ liệu:', error);
-        }
-      };
-  
-      fetchData();
+    const fetchData = async () => {
+      try {
+        const data = await readStudentRequest("");
+        setstudents(data);
+        const data1 = await readClassID();
+        setClassOption(data1);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu:", error);
+      }
+    };
+
+    fetchData();
   }, []);
 
   const handleIDChange = (event) => {
     setSearchTerm(event.target.value);
-    const filteredResults = students.filter((item) =>
-      item.studentID.includes(event.target.value) && item.classID === ""
-    ).slice(0, 5); // Chỉ lấy tối đa 5 kết quả
+    const filteredResults = students
+      .filter(
+        (item) =>
+          item.studentID.includes(event.target.value) && item.classID === ""
+      )
+      .slice(0, 5); // Chỉ lấy tối đa 5 kết quả
     setSearchResults(filteredResults);
   };
-  
+
   const handleSelect = (id) => {
     // Trả về id khi người dùng chọn
     setSearchTerm(id);
@@ -59,18 +64,16 @@ export const UpdateClassPage = () => {
     const classlist = students.filter((item) => item.classID === selectedClass);
     setclassList(classlist);
   };
-  const handleSubmit= async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    //const data = await readScore(selectedOption1,selectedOption2,selectedOption3);
-    //setScores(data);
+
     try {
       await updateStudentClass(searchTerm, selectedClass);
     } catch (error) {
       setError(error.message);
     }
     const data = await readStudentRequest("");
-    setstudents(data);  
+    setstudents(data);
   };
 
   return (
@@ -91,16 +94,32 @@ export const UpdateClassPage = () => {
         <div className="searchform">
           <form onSubmit={handleSubmit}>
             <label>Tìm mã học sinh:</label>
-            <input type="text" value={searchTerm} onChange={handleIDChange} placeholder="HS0001" />
+            <input
+              type="text"
+              value={searchTerm}
+              onChange={handleIDChange}
+              placeholder="HS0001"
+            />
             <button>Thêm</button>
             {error}
           </form>
         </div>
-        <ul className="list"> {searchResults.map((item) => ( <li key={item.studentID} onClick={()=> handleSelect(item.studentID)}> {item.studentID} - {item.name} </li> ))} </ul>
+        <ul className="list">
+          {" "}
+          {searchResults.map((item) => (
+            <li
+              key={item.studentID}
+              onClick={() => handleSelect(item.studentID)}
+            >
+              {" "}
+              {item.studentID} - {item.name}{" "}
+            </li>
+          ))}{" "}
+        </ul>
       </div>
       <div className="container">
         <label>Danh sách lớp: {selectedClass}</label>
-        <button onClick={()=> handleRefresh()}>Tải lại</button>
+        <button onClick={() => handleRefresh()}>Tải lại</button>
         <table>
           <thead>
             <tr>
@@ -110,15 +129,15 @@ export const UpdateClassPage = () => {
               <th>Lớp</th>
             </tr>
           </thead>
-          <tbody> 
-            {classList.map((item, index) => ( 
-            <tr key={index}>
-              <td>{index+1}</td>
-              <td>{item.studentID}</td>
-              <td>{item.name}</td>
-              <td>{item.classID}</td>
-            </tr> 
-            ))} 
+          <tbody>
+            {classList.map((item, index) => (
+              <tr key={index}>
+                <td>{index + 1}</td>
+                <td>{item.studentID}</td>
+                <td>{item.name}</td>
+                <td>{item.classID}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>

@@ -35,7 +35,6 @@ module.exports = async (req, res) => {
       } else {
         score = student.FinalScore;
       }
-      console.log(score);
       // check if the student has passed
       if (score >= 5) {
         studentPass++;

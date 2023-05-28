@@ -30,5 +30,6 @@ module.exports = async (req, res) => {
     newScore = newScore.filter((score) => score.subjectID === subjectID);
   if(Semester)
     newScore = newScore.filter((score) => score.Semester === Semester);
+
   res.json(newScore);
 };

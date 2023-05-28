@@ -1,12 +1,11 @@
-import {React,useState,useEffect} from 'react'
-import { useNavigate } from 'react-router-dom';
+import { React, useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import "./query.css";
-import readStudentRequest from '../../api/readStudentRequest';
-
+import readStudentRequest from "../../api/readStudentRequest";
 
 export const StudentPage = () => {
   const navigate = useNavigate();
-  const [searchTerm, setSearchTerm] = useState('');
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleLogOut = (e) => {
     e.preventDefault();
@@ -15,25 +14,27 @@ export const StudentPage = () => {
 
   const [students, setstudents] = useState([]);
   useEffect(() => {
-      // Gọi hàm getClasID() để lấy dữ liệu JSON
-      const fetchData = async () => {
-        try {
-          const data = await readStudentRequest(searchTerm);
-          setstudents(data);
-        } catch (error) {
-          console.error('Lỗi khi lấy dữ liệu:', error);
-        }
-      };
-  
-      fetchData();
-    }, []);
+    // Gọi hàm getClasID() để lấy dữ liệu JSON
+    const fetchData = async () => {
+      try {
+        const data = await readStudentRequest(searchTerm);
+        setstudents(data);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu:", error);
+      }
+    };
 
-  const fortmatDate = (isoDate)=>{
+    fetchData();
+  }, []);
+
+  const fortmatDate = (isoDate) => {
     const date = new Date(isoDate);
-    const formattedDate = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+    const formattedDate = `${date.getDate()}/${
+      date.getMonth() + 1
+    }/${date.getFullYear()}`;
     return formattedDate;
   };
-  const handleSubmit= async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await readStudentRequest(searchTerm);
     setstudents(data);
@@ -42,7 +43,7 @@ export const StudentPage = () => {
   return (
     <div>
       <div className="btn">
-        <button  onClick={handleLogOut} >Trang chủ</button>
+        <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">
         <h1>Tra cứu học sinh</h1>
@@ -50,10 +51,14 @@ export const StudentPage = () => {
       <div className="searchform">
         <form onSubmit={handleSubmit}>
           <label>Tên học sinh:</label>
-          <input type="text" id="search-input" name="search-input"
+          <input
+            type="text"
+            id="search-input"
+            name="search-input"
             value={searchTerm}
-            onChange={(event) => setSearchTerm(event.target.value)}/>
-            <button>Tìm kiếm</button>
+            onChange={(event) => setSearchTerm(event.target.value)}
+          />
+          <button>Tìm kiếm</button>
         </form>
       </div>
       <div className="container">
@@ -73,7 +78,7 @@ export const StudentPage = () => {
           <tbody>
             {students.map((item, index) => (
               <tr key={index}>
-                <td>{index+1}</td>
+                <td>{index + 1}</td>
                 <td>{item.studentID}</td>
                 <td>{item.name}</td>
                 <td>{item.gender}</td>
@@ -87,7 +92,5 @@ export const StudentPage = () => {
         </table>
       </div>
     </div>
-  )
-}
-
-
+  );
+};
