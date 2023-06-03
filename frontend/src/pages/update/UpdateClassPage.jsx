@@ -85,13 +85,13 @@ export const UpdateClassPage = () => {
         <h1>Cập nhật danh sách lớp</h1>
       </div>
       <div>
-        <div className="searchform">
+        <div className="SearchForm">
           <form>
             <label>Chọn lớp học:</label>
             <ClassDropDown options={classOption} handleChange={handleClassID} />
           </form>
         </div>
-        <div className="searchform">
+        <div className="SearchForm">
           <form onSubmit={handleSubmit}>
             <label>Tìm mã học sinh:</label>
             <input
