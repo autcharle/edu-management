@@ -1,16 +1,18 @@
 import { API_URL } from "./config.js";
 
-export default (studentID, classID) => {
+export default (maxAge, minAge, maxClassAttendant, stdScore) => {
   const token = localStorage.getItem("token");
-  return fetch(`${API_URL}/update-student-class`, {
+  return fetch(`${API_URL}/update-rule`, {
     method: "PUT",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      studentID: `${studentID}`,
-      classID: `${classID}`,
+      maxAge,
+      minAge,
+      maxClassAttendant,
+      stdScore,
     }),
   }).then((response) => {
     if (response.ok) {

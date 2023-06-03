@@ -1,16 +1,19 @@
 import { API_URL } from "./config.js";
 
-export default (studentID, classID) => {
+export default (name, gender, birth, address, email) => {
   const token = localStorage.getItem("token");
-  return fetch(`${API_URL}/update-student-class`, {
-    method: "PUT",
+  return fetch(`${API_URL}/create-student`, {
+    method: "POST",
     headers: {
       Authorization: `Bearer ${token}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      studentID: `${studentID}`,
-      classID: `${classID}`,
+      name,
+      gender,
+      birth,
+      address,
+      email,
     }),
   }).then((response) => {
     if (response.ok) {
