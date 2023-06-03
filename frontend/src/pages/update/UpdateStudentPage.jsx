@@ -13,9 +13,9 @@ export const UpdateStudentPage = () => {
   const [resultColor, setResultColor] = useState("");
   const navigate = useNavigate();
 
-  const handleClick = (e) => {
+  const handleNavigate = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/management");
   };
 
   const handleSubmit = async (e) => {
@@ -37,8 +37,8 @@ export const UpdateStudentPage = () => {
 
   return (
     <div>
-      <div className="Btn">
-        <button onClick={handleClick}>Trang chủ</button>
+      <div className="btn">
+        <button onClick={handleNavigate}>Quay lại</button>
       </div>
       <div className="container">
         <h1>Thêm học sinh</h1>

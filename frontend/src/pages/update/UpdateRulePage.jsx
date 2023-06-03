@@ -9,7 +9,6 @@ export const UpdateRulePage = () => {
   const [minAge, setMinAge] = useState("");
   const [maxClassAttendant, setMaxClassAttendant] = useState("");
   const [stdScore, setStdScore] = useState("");
-  const [updateResult, setUpdateResult] = useState("");
   const [error, setError] = useState("");
   const [rules, setRules] = useState("");
   const navigate = useNavigate();
@@ -30,9 +29,9 @@ export const UpdateRulePage = () => {
     fetchRules();
   }, []);
 
-  const handleClick = (e) => {
+  const handleNavigate = (e) => {
     e.preventDefault();
-    navigate("/");
+    navigate("/management");
   };
 
   const handleSubmit = async (e) => {
@@ -56,8 +55,8 @@ export const UpdateRulePage = () => {
 
   return (
     <div>
-      <div className="Btn">
-        <button onClick={handleClick}>Trang chủ</button>
+      <div className="btn">
+        <button onClick={handleNavigate}>Quay lại</button>
       </div>
       <div className="container">
         <h1>Cập nhật quy định lớp</h1>

@@ -17,7 +17,7 @@ export const UpdateScorePage = () => {
   const [stuID, setStuID] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
-  const handleLogOut = (e) => {
+  const handleNavigate = (e) => {
     e.preventDefault();
     navigate("/management");
   };
@@ -66,8 +66,8 @@ export const UpdateScorePage = () => {
 
   return (
     <div>
-      <div className="Btn">
-        <button onClick={handleLogOut}>Trang chủ</button>
+      <div className="btn">
+        <button onClick={handleNavigate}>Quay lại</button>
       </div>
       <div className="container">
         <h1>Cập nhật điểm</h1>

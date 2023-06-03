@@ -26,7 +26,7 @@ export const RulePage = () => {
 
   return (
     <div>
-      <div className="Btn">
+      <div className="btn">
         <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">
