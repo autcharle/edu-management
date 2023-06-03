@@ -7,17 +7,24 @@
   height: 100vh;
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
 h1 {
+  font-family: "Monsterrat-400";
+  font-size: 3rem;
+  margin-bottom: 3rem;
+  margin-top: 1rem;
+}
+
+h2 {
   font-family: "Monsterrat-700";
   font-size: 1.5rem;
   margin-bottom: 3rem;
   margin-top: 1rem;
 }
-
 
 @font-face {
   font-family: "Monsterrat-700";
@@ -53,7 +60,7 @@ h1 {
   justify-content: center;
 }
 
-.Loginform {
+.LoginForm {
   width: 22em;
   height: 50%;
   display: flex;

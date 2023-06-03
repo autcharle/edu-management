@@ -3,12 +3,12 @@ const isAgeAllowed = require("../../function/isAgeAllowed");
 const getStudentID = require("../../function/getStudentID");
 
 module.exports = async (req, res) => {
-  const {name, gender, birth, address, email} = req.body;
+  const { name, gender, birth, address, email } = req.body;
   if (!name || !gender || !birth || !address || !email) {
-    return res.status(400).send("Missing required attributes.");
+    return res.status(400).send("Vui lòng nhập đầy đủ các trường bắt buộc");
   }
   if (!(await isAgeAllowed(birth)))
-    res.status(409).send("Older/lower age allowed");
+    return res.status(409).send("Độ tuổi lớn hoặc nhỏ hơn quy định");
 
   const studentID = await getStudentID();
   const classID = "";
@@ -19,7 +19,7 @@ module.exports = async (req, res) => {
     birth,
     address,
     email,
-    classID
+    classID,
   });
   const newStudent = await student.save();
   res.json(newStudent);

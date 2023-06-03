@@ -26,37 +26,38 @@ export const LogInPage = () => {
 
   return (
     <div className="app">
+      <h1>Student Tracker</h1>
       <div className="cover">
-      <h1>Đăng nhập để bắt đầu sử dụng</h1>
+        <h2>Đăng nhập để bắt đầu sử dụng</h2>
 
-      <form className="LoginForm" onSubmit={handleLogin}>
-        <input
-          className="LoginInput"
-          placeholder="Tài khoản"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input 
-          className="LoginInput"
-          placeholder="Mật khẩu"
-          type="password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <div
-          style={{
-            color: "red",
-            fontSize: "1rem",
-            lineHeight: "1.5rem",
-            fontFamily: "Monsterrat-300",
-            height: "1.5rem",
-          }}
-        >
-          {error}
-        </div>
-        <button>Đăng nhập</button>
-      </form>
-    </div>
+        <form className="LoginForm" onSubmit={handleLogin}>
+          <input
+            className="LoginInput"
+            placeholder="Tài khoản"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <input
+            className="LoginInput"
+            placeholder="Mật khẩu"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          <div
+            style={{
+              color: "red",
+              fontSize: "1rem",
+              lineHeight: "1.5rem",
+              fontFamily: "Monsterrat-300",
+              height: "1.5rem",
+            }}
+          >
+            {error}
+          </div>
+          <button>Đăng nhập</button>
+        </form>
+      </div>
     </div>
   );
 };
