@@ -56,7 +56,7 @@ export const UpdateRulePage = () => {
 
   return (
     <div>
-      <div className="btn">
+      <div className="Btn">
         <button onClick={handleClick}>Trang chủ</button>
       </div>
       <div className="container">

@@ -24,7 +24,6 @@ export const ScorePage = () => {
   const [scores, setScores] = useState([]);
 
   useEffect(() => {
-    // Gọi hàm getClasID() để lấy dữ liệu JSON
     const fetchData = async () => {
       try {
         const data1 = await readClassID();
@@ -59,13 +58,13 @@ export const ScorePage = () => {
   };
   return (
     <div>
-      <div className="btn">
+      <div className="Btn">
         <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">
         <h1>Bảng điểm</h1>
       </div>
-      <div className="searchform">
+      <div className="SearchForm">
         <form onSubmit={handleSubmit}>
           <label>Lớp học:</label>
           <ClassDropDown

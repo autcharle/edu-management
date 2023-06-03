@@ -12,7 +12,6 @@ export const RulePage = () => {
   };
   const [rules, setRules] = useState([]);
   useEffect(() => {
-    // Gọi hàm getClasID() để lấy dữ liệu JSON
     const fetchData = async () => {
       try {
         const data = await readRuleRequest();
@@ -27,7 +26,7 @@ export const RulePage = () => {
 
   return (
     <div>
-      <div className="btn">
+      <div className="Btn">
         <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">

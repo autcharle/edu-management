@@ -9,8 +9,7 @@ module.exports = async (req, res) => {
 
   // Kiểm tra sự tồn tại của studentID trong StudentModel
   const existingStudent = await StudentModel.findOne({ studentID });
-  if (!existingStudent)
-    return res.status(404).send("Student not found.");
+  if (!existingStudent) return res.status(404).send("Student not found.");
 
   // Kiểm tra classID trong StudentModel
   if (existingStudent.classID === "") {
@@ -26,9 +25,12 @@ module.exports = async (req, res) => {
   });
 
   if (existingScore) {
-    if (HS1 !== "" && parseFloat(HS1) >= 0 && parseFloat(HS1) <= 10) existingScore.HS1 = parseFloat(HS1);
-    if (HS2 !== "" && parseFloat(HS2) >= 0 && parseFloat(HS2) <= 10) existingScore.HS2 = parseFloat(HS2);
-    if (HS3 !== "" && parseFloat(HS3) >= 0 && parseFloat(HS3) <= 10) existingScore.HS3 = parseFloat(HS3);
+    if (HS1 !== "" && parseFloat(HS1) >= 0 && parseFloat(HS1) <= 10)
+      existingScore.HS1 = parseFloat(HS1);
+    if (HS2 !== "" && parseFloat(HS2) >= 0 && parseFloat(HS2) <= 10)
+      existingScore.HS2 = parseFloat(HS2);
+    if (HS3 !== "" && parseFloat(HS3) >= 0 && parseFloat(HS3) <= 10)
+      existingScore.HS3 = parseFloat(HS3);
     existingScore.FinalScore = await calSubjectScore(
       existingScore.HS1,
       existingScore.HS2,
@@ -41,7 +43,14 @@ module.exports = async (req, res) => {
     HS2 = parseFloat(HS2) ?? 0;
     HS3 = parseFloat(HS3) ?? 0;
 
-    if (HS1 >= 0 && HS1 <= 10 && HS2 >= 0 && HS2 <= 10 && HS3 >= 0 && HS3 <= 10) {
+    if (
+      HS1 >= 0 &&
+      HS1 <= 10 &&
+      HS2 >= 0 &&
+      HS2 <= 10 &&
+      HS3 >= 0 &&
+      HS3 <= 10
+    ) {
       const FinalScore = await calSubjectScore(HS1, HS2, HS3);
       const Score = new ScoreModel({
         studentID,

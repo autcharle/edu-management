@@ -1,4 +1,3 @@
-const ScoreModel = require("../../models/scoreModel");
 const callSubjectFinalScore = require("../../function/callSubjectFinalScore");
 const calFinalScore = require("../../function/calFinalScore");
 

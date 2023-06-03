@@ -17,6 +17,6 @@ module.exports = async (req, res) => {
       token,
     });
   } else {
-    res.status(401).send("Wrong password");
+    res.status(401).send("Tài khoản hoặc mật khẩu không tồn tại");
   }
 };

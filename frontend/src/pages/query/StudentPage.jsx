@@ -12,13 +12,12 @@ export const StudentPage = () => {
     navigate("/");
   };
 
-  const [students, setstudents] = useState([]);
+  const [students, setStudents] = useState([]);
   useEffect(() => {
-    // Gọi hàm getClasID() để lấy dữ liệu JSON
     const fetchData = async () => {
       try {
         const data = await readStudentRequest(searchTerm);
-        setstudents(data);
+        setStudents(data);
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu:", error);
       }
@@ -27,7 +26,7 @@ export const StudentPage = () => {
     fetchData();
   }, []);
 
-  const fortmatDate = (isoDate) => {
+  const formatDate = (isoDate) => {
     const date = new Date(isoDate);
     const formattedDate = `${date.getDate()}/${
       date.getMonth() + 1
@@ -37,7 +36,7 @@ export const StudentPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = await readStudentRequest(searchTerm);
-    setstudents(data);
+    setStudents(data);
   };
 
   return (
@@ -48,7 +47,7 @@ export const StudentPage = () => {
       <div className="container">
         <h1>Tra cứu học sinh</h1>
       </div>
-      <div className="searchform">
+      <div className="SearchForm">
         <form onSubmit={handleSubmit}>
           <label>Tên học sinh:</label>
           <input
@@ -82,7 +81,7 @@ export const StudentPage = () => {
                 <td>{item.studentID}</td>
                 <td>{item.name}</td>
                 <td>{item.gender}</td>
-                <td>{fortmatDate(item.birth)}</td>
+                <td>{formatDate(item.birth)}</td>
                 <td>{item.address}</td>
                 <td>{item.email}</td>
                 <td>{item.classID}</td>

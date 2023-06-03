@@ -14,7 +14,7 @@ export const UpdateClassPage = () => {
   const [error, setError] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [students, setstudents] = useState([]);
+  const [students, setStudents] = useState([]);
 
   const handleBack = (e) => {
     e.preventDefault();
@@ -34,7 +34,7 @@ export const UpdateClassPage = () => {
     const fetchData = async () => {
       try {
         const data = await readStudentRequest("");
-        setstudents(data);
+        setStudents(data);
         const data1 = await readClassID();
         setClassOption(data1);
       } catch (error) {
@@ -73,7 +73,7 @@ export const UpdateClassPage = () => {
       setError(error.message);
     }
     const data = await readStudentRequest("");
-    setstudents(data);
+    setStudents(data);
   };
 
   return (
