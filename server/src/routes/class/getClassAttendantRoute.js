@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
       (result) => result.classID === req.body.classID
     );
     res.json(result1);
-  }else{
+  } else {
     res.json(result);
   }
 };

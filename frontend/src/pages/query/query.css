@@ -1,14 +1,14 @@
-.searchform{
+.SearchForm {
   display: flex;
   text-align: center;
   align-items: center;
   margin: 3rem auto;
 }
 
-.searchform form{
+.SearchForm form {
   margin: 0 auto;
 }
-.searchform button{
+.SearchForm button {
   margin: 0 1rem;
 }
 
@@ -17,7 +17,7 @@
   text-align: center;
 }
 
-.btn{
+.Btn {
   text-align: right;
 }
 
@@ -25,7 +25,7 @@ table {
   border-collapse: collapse;
   width: 80%;
   margin: 0 auto;
-  background-color: #ddd ;
+  background-color: #ddd;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -42,12 +42,12 @@ td {
 }
 
 tr:hover {
-  background-color: #0A0A0A;
+  background-color: #0a0a0a;
   color: white;
 }
 
-label{
-  font-size:large;
+label {
+  font-size: large;
   font-weight: bold;
   padding: 10px;
 }

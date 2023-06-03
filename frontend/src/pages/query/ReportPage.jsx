@@ -20,7 +20,6 @@ export const ReportPage = () => {
   const [reports, setReports] = useState([]);
 
   useEffect(() => {
-    // Gọi hàm getClasID() để lấy dữ liệu JSON
     const fetchData = async () => {
       try {
         const data = await readSubject();
@@ -51,7 +50,7 @@ export const ReportPage = () => {
       <div className="container">
         <h1>Báo cáo</h1>
       </div>
-      <div className="searchform">
+      <div className="SearchForm">
         <form onSubmit={handleSubmit}>
           <label>Môn học:</label>
           <SubjectDropDown
@@ -75,7 +74,9 @@ export const ReportPage = () => {
         </form>
       </div>
       <div className="container">
-        <h1>Mã môn: {selectedOption1}. Học kì:{selectedOption2}</h1>
+        <h1>
+          Mã môn: {selectedOption1}. Học kì:{selectedOption2}
+        </h1>
         <table>
           <thead>
             <tr>

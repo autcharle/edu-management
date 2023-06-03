@@ -8,9 +8,7 @@ const router = express.Router();
 router.post("/login", require("./routes/login/loginRoute"));
 // Screen 2,3: menu page
 // Screen 4: score list
-router.post("/get-score",
-  isLoggedIn,
-  require("./routes/score/getScoreRoute"));
+router.post("/get-score", isLoggedIn, require("./routes/score/getScoreRoute"));
 // Screen 5: class attendants list
 router.post(
   "/get-class-attendant",
@@ -30,10 +28,7 @@ router.post(
   require("./routes/student/getStudentRoute")
 );
 //screen 8: get rules
-router.get("/get-rule", 
-  isLoggedIn, 
-  require("./routes/rule/getRuleRoute")
-);
+router.get("/get-rule", isLoggedIn, require("./routes/rule/getRuleRoute"));
 // Screen 9: add student
 router.post(
   "/create-student",
@@ -41,15 +36,11 @@ router.post(
   require("./routes/student/createStudentRoute")
 );
 // Screen 10: update rule
-router.put(
-  "/update-rule", 
-  isAdmin, 
-  require("./routes/rule/updateRuleRoute")
-);
+router.put("/update-rule", isAdmin, require("./routes/rule/updateRuleRoute"));
 // Screen 11: update class
 router.put(
-  "/update-student-class", 
-  isAdmin, 
+  "/update-student-class",
+  isAdmin,
   require("./routes/student/updateStudentClassRoute")
 );
 // Screen 12: update score
@@ -58,7 +49,6 @@ router.post(
   isTeacher,
   require("./routes/score/createScoreRoute")
 );
-
 
 // other
 router.get(
@@ -87,7 +77,5 @@ router.post(
   isAdmin,
   require("./routes/subject/createSubjectRoute")
 );
-
-
 
 module.exports = router;

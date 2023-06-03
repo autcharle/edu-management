@@ -8,7 +8,6 @@ const AddScorePopup = ({ v1, v2, v3, onClose }) => {
   const [error, setError] = useState("");
 
   const handleSendScore = async () => {
-    // Call the API function here
     try {
       await updateScore(v1, v2, v3, t1, t2, t3);
     } catch (error) {

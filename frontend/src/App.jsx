@@ -43,42 +43,15 @@ function App() {
             path="/management"
             element={<ProtectedRoute element={ManagePage} />}
           />
-          <Route
-            path="/student"
-            element={<StudentPage />}
-          />
-          <Route
-            path="/rule"
-            element={<RulePage />}
-          />
-          <Route
-            path="/class"
-            element={<ClassPage />}
-          />
-          <Route
-            path="/score"
-            element={<ScorePage />}
-          />
-          <Route
-            path="/report"
-            element={<ReportPage />}
-          />
-          <Route
-            path="/management/class"
-            element={<UpdateClassPage />}
-          />
-          <Route
-            path="/management/rule"
-            element={<UpdateRulePage />}
-          />
-          <Route
-            path="/management/score"
-            element={<UpdateScorePage />}
-          />
-          <Route
-            path="/management/student"
-            element={<UpdateStudentPage />}
-          />
+          <Route path="/student" element={<StudentPage />} />
+          <Route path="/rule" element={<RulePage />} />
+          <Route path="/class" element={<ClassPage />} />
+          <Route path="/score" element={<ScorePage />} />
+          <Route path="/report" element={<ReportPage />} />
+          <Route path="/management/class" element={<UpdateClassPage />} />
+          <Route path="/management/rule" element={<UpdateRulePage />} />
+          <Route path="/management/score" element={<UpdateScorePage />} />
+          <Route path="/management/student" element={<UpdateStudentPage />} />
         </Routes>
       </TokenContext.Provider>
     </div>

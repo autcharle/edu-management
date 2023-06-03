@@ -13,8 +13,8 @@ export const UpdateScorePage = () => {
   const [selectedOption3, setSelectedOption3] = useState("");
   const [searchTerm, setSearchTerm] = useState("");
   const [searchResults, setSearchResults] = useState([]);
-  const [students, setstudents] = useState([]);
-  const [stuID, setstuID] = useState("");
+  const [students, setStudents] = useState([]);
+  const [stuID, setStuID] = useState("");
   const [showPopup, setShowPopup] = useState(false);
 
   const handleLogOut = (e) => {
@@ -29,7 +29,7 @@ export const UpdateScorePage = () => {
         const data2 = await readSubject();
         setOptions2(data2);
         const data3 = await readStudentRequest("");
-        setstudents(data3);
+        setStudents(data3);
       } catch (error) {
         setError(error.message);
       }
@@ -52,7 +52,7 @@ export const UpdateScorePage = () => {
   };
 
   const handleSelect = (id) => {
-    setstuID(id);
+    setStuID(id);
     handleOpenPopup();
   };
 
@@ -66,13 +66,13 @@ export const UpdateScorePage = () => {
 
   return (
     <div>
-      <div className="btn">
+      <div className="Btn">
         <button onClick={handleLogOut}>Trang chủ</button>
       </div>
       <div className="container">
         <h1>Cập nhật điểm</h1>
       </div>
-      <div className="searchform">
+      <div className="SearchForm">
         <form>
           <label>Môn học:</label>
           <SubjectDropDown
@@ -91,7 +91,7 @@ export const UpdateScorePage = () => {
           </select>
         </form>
       </div>
-      <div className="searchform">
+      <div className="SearchForm">
         <form>
           <label>Tìm lớp:</label>
           <input

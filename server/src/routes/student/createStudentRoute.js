@@ -24,4 +24,3 @@ module.exports = async (req, res) => {
   const newStudent = await student.save();
   res.json(newStudent);
 };
-/* */

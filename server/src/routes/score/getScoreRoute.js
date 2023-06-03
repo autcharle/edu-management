@@ -14,21 +14,20 @@ module.exports = async (req, res) => {
     {
       $addFields: {
         classID: { $arrayElemAt: ["$studentDetail.classID", 0] },
-        name: { $arrayElemAt: ["$studentDetail.name", 0] }
-      }
+        name: { $arrayElemAt: ["$studentDetail.name", 0] },
+      },
     },
     {
       $project: {
-        studentDetail: 0
-      }
-    }
-  ])
+        studentDetail: 0,
+      },
+    },
+  ]);
   var newScore = score;
-  if(classID)
-    newScore = score.filter((score) => score.classID === classID);
-  if(subjectID)
+  if (classID) newScore = score.filter((score) => score.classID === classID);
+  if (subjectID)
     newScore = newScore.filter((score) => score.subjectID === subjectID);
-  if(Semester)
+  if (Semester)
     newScore = newScore.filter((score) => score.Semester === Semester);
 
   res.json(newScore);

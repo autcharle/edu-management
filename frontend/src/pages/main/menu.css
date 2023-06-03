@@ -3,13 +3,11 @@
   text-align: center;
 }
 
-.container button{
+.container button {
   margin: 0.5rem;
-
 }
-.container h1{
+.container h1 {
   margin: 1rem;
-
 }
 .box {
   border: 1px solid white;
@@ -20,12 +18,10 @@
   align-items: center;
   transition: all 0.3s ease-in-out;
   margin: 0 0 1rem 0;
-
 }
-.container h3{
+.container h3 {
   margin: 1rem auto;
 }
-
 
 .box:hover {
   transform: scale(1.1);
