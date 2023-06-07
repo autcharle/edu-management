@@ -73,8 +73,8 @@ yarn run start:server
 7. Cài đặt Heroku CLI. Bạn có thể tải trên website của Heroku.
 
 6. Mở terminal đăng nhập vào Heroku và chuyển đến thư mục frontend.
-`heroku login
-cd frontend/`
+`heroku login`
+`cd frontend/`
 
 8. Cài đặt Git repository bằng cách chạy dòng lệnh:
 `git init`
@@ -123,7 +123,10 @@ cd frontend/`
 `git push heroku master`
 
 # Video demo
-- NOT YET
+- [Video demo đồ án](https://youtu.be/zjVZrykHoE4)
+
+# Website 
+- https://frontend-st-hcmus.herokuapp.com/
   
 # Current status
 - Tra cứu học sinh
